@@ -1,0 +1,55 @@
+- ATM System (Python – Class Based):-
+- 
+- A beginner-friendly, menu-driven ATM system implemented using Object-Oriented Programming in pure Python.
+- This project demonstrates how classes, file handling, and control flow can be combined to simulate a basic real-world banking - system.
+- 
+- Features:-
+- 
+- Object-Oriented Design using a custom Atm class
+- Create account with proper validation
+- Login with 3 PIN attempts
+- Deposit, Withdraw, and Transfer functionality
+- Transaction history (last 5 records)
+- Persistent data storage using file handling (atm.txt)
+- Session-based menu navigation
+- 
+- How to Run:-
+- python main.py
+- python atm.py
+- 
+- Requirements:-
+- 
+- Python 3.x
+- No external libraries required
+- atm.txt will be created automatically if it does not exist
+- 
+- Validation Rules:-
+- 
+- Account number must be exactly 10 digits
+- PIN must be exactly 4 digits
+- Amount must be greater than 0
+- Cannot transfer to the same account
+- Cannot withdraw more than available balance
+- 
+- Project Structure:-
+- 
+- The system is built around a single Atm class that:
+- Loads accounts from file on initialization
+- Stores account data using dictionaries
+- Handles account operations through class methods
+- Saves updated data back to file
+- This structure demonstrates basic object-oriented programming concepts such as:
+- Constructors (__init__)
+- Instance variables
+- Method-based operations
+- Encapsulation of data and behavior
+- 
+- Learning Outcomes:-
+- 
+- This project helped reinforce understanding of:
+- Object-Oriented Programming in Python
+- Dictionaries for structured data storage
+- File handling (read/write operations)
+- Input validation techniques
+- Control flow using loops and conditionals
+- Designing simple real-world systems
