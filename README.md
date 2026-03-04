@@ -9,6 +9,18 @@ This project includes:
 - 💸 Deposit, Withdraw, Transfer
 - 📜 Transaction history (last 5 records)
 
+Project Structure:- 
+
+An-Advance-Atm/
+├── Advance-Atm/
+│    └── atm.py
+│    └── README.md
+├──Advance_atm_Class/
+│    └── README.md
+│    └── main.py
+├── LICENSE
+└── README.md
+
 ▶️ Run:-
 - python atm.py
 - python main.py
