@@ -1,0 +1,11 @@
+{
+    "1234567890": {
+        "name": "dhruv",
+        "balance": 15999,
+        "pin": "0000",
+        "history": [
+            "+1 deposited",
+            "-1 withdrawn"
+        ]
+    }
+}

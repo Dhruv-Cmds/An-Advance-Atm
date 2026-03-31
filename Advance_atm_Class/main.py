@@ -1,30 +1,51 @@
+import json
+
 class Atm:
-    def __init__(self, filename="atm.txt"):
+
+    def __init__(self, filename="Advance_atm_Class/atm.json"): # "Advance_atm_Class/atm.txt"
+
         self.filename = filename
         self.account = {}
         self.load_account()
 
-    def load_account(self):
-        try:
-            with open(self.filename, "r") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    acc_no, name, balance, pin = line.split()
-                    self.account[acc_no] = {
-                        "name": name,
-                        "balance": int(balance),
-                        "pin": pin,
-                        "history": []
-                    }
-        except FileNotFoundError:
-            open(self.filename, "w").close()
+    # .txt
+    # def load_account(self):
 
-    def save_account(self):
-        with open(self.filename, "w") as f:
-            for acc_no, data in self.account.items():
-                f.write(f"{acc_no} {data['name']} {data['balance']} {data['pin']}\n")
+    #     try:
+    #         with open(self.filename, "r") as f:
+    #             for line in f:
+    #                 line = line.strip()
+    #                 if not line:
+    #                     continue
+    #                 acc_no, name, balance, pin = line.split()
+    #                 self.account[acc_no] = {
+    #                     "name": name,
+    #                     "balance": int(balance),
+    #                     "pin": pin,
+    #                     "history": []
+    #                 }
+    #     except FileNotFoundError:
+    #         open(self.filename, "w").close()
+
+    # def save_account(self):
+    #     with open(self.filename, "w") as f:
+    #         for acc_no, data in self.account.items():
+    #             f.write(f"{acc_no} {data['name']} {data['balance']} {data['pin']}\n")
+
+    # .josn
+    def load_account (self):
+
+        try:
+
+            with open (self.filename , "r") as f:
+                self.account = json.load(f)
+
+        except FileNotFoundError:
+            self.account = {}
+
+    def save_account (self):
+        with open (self.filename , "w") as f:
+            json.dump(self.account , f , indent=4)      
 
     def creat_account(self):
         acc_no = input("Enter 10-digit account number: ").strip()
@@ -170,7 +191,7 @@ class Atm:
         for record in history[-5:][::-1]:
             print(record)
 
-    def Logut(self, acc_no):
+    def Logut(self):
         print("Logged out.")
 
     def session_menu(self, acc_no):
