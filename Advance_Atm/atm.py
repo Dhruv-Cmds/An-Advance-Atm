@@ -4,39 +4,67 @@
 # =========================
 # ATM SYSTEM (RAW PYTHON)
 # =========================
+import json
 
-filename = "atm.txt"
-try :
+filename = "Advance_Atm/atm.json"
+# filename = "Advance_Atm/atm.txt"
+# try :
 
-    with open (filename , "r") as f:
-        lines = f.readlines()
+#     with open (filename , "r") as f:
+#         lines = f.readlines()
 
-except FileNotFoundError :
-    open (filename , "w").close()
-    lines = []
+# except FileNotFoundError :
+#     open (filename , "w").close()
+#     lines = []
 
 accounts = {}
+try:
+    with open(filename, "r") as f:
+        accounts = json.load(f)
 
-for line in lines:
-    line = line.strip()
+except (FileNotFoundError, json.JSONDecodeError):
+    accounts = {}
 
-    if not line:
-        continue
+# for .txt file 
+# for line in lines:
+#     line = line.strip()
 
-    acc_no , name , balance , pin = line.split()
+#     if not line:
+#         continue
 
-    accounts[acc_no] = {
-        "name": name,
-        "balance": int(balance),
-        "pin": pin,
-        "history": []
-    }
+#     acc_no , name , balance , pin = line.split()
 
-def save_accounts (filename , accounts):
+#     accounts[acc_no] = {
+#         "name": name,
+#         "balance": int(balance),
+#         "pin": pin,
+#         "history": []
+#     }
 
-    with open (filename , "w") as f:
-        for acc_no , data in accounts.items():
-          f.write(f"{acc_no} {data['name']} {data['balance']} {data['pin']}\n") 
+# for .json file 
+if False:
+    for line in lines:
+        line = line.strip()
+
+        acc_no , name , balance , pin = line.split()
+
+        accounts[acc_no] = {
+            "name": name,
+            "balance": int(balance),
+            "pin": pin,
+            "history": []
+        }
+# .txt
+# def save_accounts (filename , accounts):
+
+#     with open (filename , "w") as f:
+#         for acc_no , data in accounts.items():
+#           f.write(f"{acc_no} {data['name']} {data['balance']} {data['pin']}\n") 
+
+# .json
+def save_accounts(filename, accounts):
+    with open(filename, "w") as f:
+        json.dump(accounts, f, indent=4)
 
 
 def Creat_account ():

@@ -40,7 +40,7 @@ class Atm:
             with open (self.filename , "r") as f:
                 self.account = json.load(f)
 
-        except FileNotFoundError:
+        except (FileNotFoundError, json.JSONDecodeError):
             self.account = {}
 
     def save_account (self):
