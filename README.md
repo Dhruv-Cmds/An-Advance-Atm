@@ -7,6 +7,21 @@
 - Deposit Funds
 - Transaction History
 
+---
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Dhruv-Cmds/An-Advance-Atm.git
+   ```
+   
+2. Navigate into the project directory:
+  ```bash
+  cd An-Advance-Atm
+  ```
+3. Run the program:
+  python main.py
+
+---
 ## Project Structure
 ```
 An-Advance-Atm/
@@ -17,20 +32,15 @@ An-Advance-Atm/
 │   ├── main.py
 │   ├── atm.josn
 │   ├── atm.txt
+│   └── README.md
 │
 └── Advance_atm_Class/
-    ├── main.py
-    ├── atm.josn
-    └── atm.txt
+│   ├── main.py
+│   ├── atm.josn
+│   ├── atm.txt
+│   └── README.md
 ```
 
-## Contributing
-We welcome contributions! Please make sure to follow the guidelines:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/new-feature`).
-3. Make your changes and commit them (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature/new-feature`).
-5. Create a pull request.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
